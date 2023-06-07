@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-const Creer = ({onAdd, onModifier, listes}) => {
+const Creer = ({onAdd, onModifier, listes, fetchProduit}) => {
     const [nom, setNom] = useState('')
     const [prix, setPrix] = useState('')
     const [description, setDescription] = useState('')
@@ -36,16 +36,29 @@ const Creer = ({onAdd, onModifier, listes}) => {
         navigator("/produits");
     }
 
-    useEffect(()=>{
-        if (id) {
-            const {nom, prix, description, catégorie} = listes.find(item =>item.id == id)
+    // useEffect(()=>{
+    //     if (id) {
+    //         const {nom, prix, description, catégorie} = listes.find(item =>item.id == id)
+    //         setNom(nom)
+    //         setPrix(prix)
+    //         setDescription(description)
+    //         setCategorie(catégorie)
+    //     }
+      
+    // },[])
+
+    useEffect(() => {
+        const modifier = async () => {
+          if (id) {
+            const {nom, prix, description, catégorie} = await fetchProduit(id);
             setNom(nom)
             setPrix(prix)
             setDescription(description)
             setCategorie(catégorie)
-        }
-      
-    },[])
+          }
+        };
+        modifier();
+      }, []);
 
     return(
         <div class="row justify-content-center" style={{ marginTop: '6.5rem' }}>

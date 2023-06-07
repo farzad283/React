@@ -9,9 +9,33 @@ import { produits } from "./Data";
 
 function App() {
 
-  const [listes, setListes] = useState(produits);
-  console.log(produits);
-  console.log(listes);
+  // const [listes, setListes] = useState(produits);
+  const [listes, setListes] = useState([]);
+
+  useEffect (()=>{
+    const getProduits = async () =>{
+      const produitFromServer = await fetchProduits()
+      setListes(produitFromServer)
+    }
+    getProduits()
+  },[])
+
+  const fetchProduits = async () => {
+    const res = await fetch('http://localhost:5000/produits')
+    const data = await res.json()
+    return data
+  }
+
+  const fetchProduit = async (id) => {
+    const res = await fetch(`http://localhost:5000/produits/${id}`)
+    const data = await res.json()
+    return data
+  }
+
+
+
+
+
 
   const deleteProduit = (id) => {
     const nouvelleListes = listes.filter((produit) => produit.id !== id);
