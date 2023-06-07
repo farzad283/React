@@ -21,6 +21,7 @@ const Header = () => {
           >
             Produits
           </Link>
+          <a href="https://github.com/farzad283/React.git" target={'blank'} className={'nav-link ml-4'} >GitHub</a>
         </nav>
       </header>
     </>
