@@ -2,30 +2,43 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-const Creer = ({onAdd, onModifier, listes, fetchProduit}) => {
+const Creer = ({onAdd, modifierProduit, listes, fetchProduit}) => {
     const [nom, setNom] = useState('')
     const [prix, setPrix] = useState('')
     const [description, setDescription] = useState('')
     const [catégorie, setCategorie] = useState('')
-    const [thumbnail, setThumbnail] = useState('https://i.dummyjson.com/data/products/5/2.jpg')
+    const [thumbnail,setThumbnail]=useState('https://i.dummyjson.com/data/products/5/2.jpg')
 
-    let {id} = useParams();
+    const {id} = useParams();
 
     const navigator = useNavigate();
-
+    useEffect(() => {
+        const modifier = async () => {
+          if (id) {
+            const {nom, prix, description, catégorie, thumbnail} = await fetchProduit(id);
+            setNom(nom)
+            setPrix(prix)
+            setDescription(description)
+            setCategorie(catégorie);
+            setThumbnail(thumbnail);
+            console.log(thumbnail);
+            console.log(id);
+          }
+        };
+        modifier();
+      }, []);
     const onSubmit = (e) => {
         e.preventDefault()
         if(!nom){
             alert('Ajouter un nom')
             return
         }
-        if(id){
-            onModifier({ id, nom, prix, description, catégorie,thumbnail })
-        }else{
-            id= Math.floor(Math.random()*1000)+11;
-            onAdd({id, nom, prix, description, catégorie,thumbnail })
-        }
 
+        if(id){
+            modifierProduit({ id, nom, prix, description,catégorie ,thumbnail})
+        }else{
+            onAdd({ nom, prix, description, catégorie,thumbnail })
+        }
        
         setNom('')
         setPrix('')
@@ -35,6 +48,8 @@ const Creer = ({onAdd, onModifier, listes, fetchProduit}) => {
 
         navigator("/produits");
     }
+
+   
 
     // useEffect(()=>{
     //     if (id) {
@@ -47,18 +62,9 @@ const Creer = ({onAdd, onModifier, listes, fetchProduit}) => {
       
     // },[])
 
-    useEffect(() => {
-        const modifier = async () => {
-          if (id) {
-            const {nom, prix, description, catégorie} = await fetchProduit(id);
-            setNom(nom)
-            setPrix(prix)
-            setDescription(description)
-            setCategorie(catégorie)
-          }
-        };
-        modifier();
-      }, []);
+    
+
+      
 
     return(
         <div class="row justify-content-center" style={{ marginTop: '6.5rem' }}>
