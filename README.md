@@ -51,7 +51,11 @@ o	npm install bootstrap
 
 Pour  scenario 1:   créer dossier build
 
+    npm run build
     sudo npm i -g serve
+    sudo npx serve -s build -p 8080
+
+or --------------------------------------------------------------------------
 
 -	Ajouter cette command sur page « package.json » :
 
