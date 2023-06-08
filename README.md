@@ -4,6 +4,7 @@ Nom: Mohammadreza Habibzadeh - 2296191
 Github : https://github.com/farzad283/React.git        
 
 Scenario 1=> branch: main 
+
 Scenario 2 => branch: senario2
 
 
@@ -18,6 +19,14 @@ Dans ce projet, une liste d'informations sur le produit est fournie.
 
 • Sur cette page, on peut voir la liste des produits et on peut la modifier en cliquant sur le bouton "Modifier" de chaque produit. Et supprimez ce produit en cliquant sur le bouton "Supprimer". Vous pouvez également créer un nouveau produit en cliquant sur le bouton "Ajouter".
 
+
+-----------------------------------------------------------------------------------------
+
+Références :
+
+https://getbootstrap.com/docs/5.3/examples/album/
+
+https://dummyjson.com/
 
 -----------------------------------------------------------------------------------------
 
