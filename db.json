@@ -18,7 +18,7 @@
     },
     {
       "id": 4,
-      "nom": "55OPPOF19",
+      "nom": "55O PPOF19",
       "prix": 280,
       "description": "OPPO F19 is officially announced on April 2021.",
       "catégorie": "smartphones",
@@ -34,7 +34,7 @@
     },
     {
       "id": 6,
-      "nom": "rMacBook Pro",
+      "nom": "MacBook Pro",
       "prix": 1749,
       "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
       "catégorie": "laptops",
@@ -42,7 +42,7 @@
     },
     {
       "id": 7,
-      "nom": "rttttttttSamsung Galaxy Book",
+      "nom": "Samsung Galaxy Book",
       "prix": 1499,
       "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
       "catégorie": "laptops",
@@ -74,14 +74,6 @@
         "https://i.dummyjson.com/data/products/9/4.jpg",
         "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
       ]
-    },
-    {
-      "nom": "sonyyyyy",
-      "prix": "4444",
-      "description": "ggggg",
-      "catégorie": "rrrr",
-      "thumbnail": "https://i.dummyjson.com/data/products/5/2.jpg",
-      "id": 10
     }
   ]
 }
