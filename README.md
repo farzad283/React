@@ -1,3 +1,83 @@
+Nom: Mohammadreza Habibzadeh - 2296191
+
+Github : https://github.com/farzad283/React.git        
+
+Scenario 1=> branch: main 
+
+Scenario 2 => branch: senario2
+
+
+
+----------------------------------------------------------------------------------------
+
+Description:
+
+Dans ce projet, une liste d'informations sur le produit est fournie.
+
+• La première page est la couverture du projet, sur laquelle vous pouvez naviguer ou cliquer pour accéder à la liste des produits.
+
+• Sur cette page, on peut voir la liste des produits et on peut la modifier en cliquant sur le bouton "Modifier" de chaque produit. Et supprimez ce produit en cliquant sur le bouton "Supprimer". Vous pouvez également créer un nouveau produit en cliquant sur le bouton "Ajouter".
+
+
+-----------------------------------------------------------------------------------------
+
+Références :
+
+https://getbootstrap.com/docs/5.3/examples/album/
+
+https://dummyjson.com/
+
+-----------------------------------------------------------------------------------------
+
+La documentation: 
+
+
+1-	Créer un dossier nommé “react-tp2” :
+
+          npx create-react-app react-tp2
+
+2-	
+
+o	Cd react-tp2
+o	npm start
+
+3-	Créer un dossier nommé components dans dossier src
+4-	Installé :
+o	npm i react-icons
+o	npm install react-route-dom
+o	npm install bootstrap
+
+
+Pour  scenario 1:   créer dossier build
+
+    npm run build
+    sudo npm i -g serve
+    sudo npx serve -s build -p 8080
+
+or --------------------------------------------------------------------------
+
+-	Ajouter cette command sur page « package.json » :
+
+o	” homepage” = ” https://e229691.webdev.cmaisonneuve.qc.ca/build”
+
+    npm run build
+
+
+Pour  scenario 2:   
+
+     npm install json-server
+
+-	Ajouter cette command sur page « package.json » :
+
+o	"server": "json-server --watch db.json --port 5000"
+
+     npm run server
+     new terminal : npm start
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
